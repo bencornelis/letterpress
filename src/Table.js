@@ -7,15 +7,12 @@ function Table(props) {
       <h4>{title}</h4>
       <table>
         <tbody>
-          {rows.map((row, i) => {
-            const { character, count } = row;
-            return (
-              <tr key={i}>
-                <td>{character}</td>
-                <td>{count}</td>
-              </tr>
-            )
-          })}
+          {rows.map(({ character, count }) =>
+            <tr key={character}>
+              <td>{character}</td>
+              <td>{count}</td>
+            </tr>
+          )}
         </tbody>
       </table>
     </div>
