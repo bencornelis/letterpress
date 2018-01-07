@@ -1,0 +1,22 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.left-column {
+  float: left;
+  width: 50%;
+}
+
+.right-column {
+  float: right;
+  width: 45%;
+}
+
+ textarea {
+   width: 100%;
+   font-family: 'Open Sans', sans-serif;
+ }
+
+td {
+  width: 80px;
+}
