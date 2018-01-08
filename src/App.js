@@ -57,10 +57,11 @@ class App extends Component {
           <TextInput
             text={text}
             setText={this.setText} />
+          character count: {charCount}
+
           <LigatureInput
             ligatures={ligatures}
             setLigatures={this.setLigatures} />
-          character count: {charCount}
         </div>
         <div className='right-column'>
           <Statistics

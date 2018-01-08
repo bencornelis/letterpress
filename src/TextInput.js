@@ -20,12 +20,15 @@ class TextInput extends Component {
   render() {
     const { text } = this.props
     return (
-      <textarea
-        defaultValue={text}
-        ref={el => { this.textarea = el; }}
-        rows='25'
-        onInput={this.updateText}
-      />
+      <div>
+        <h4>Enter text here:</h4>
+        <textarea
+          defaultValue={text}
+          ref={el => { this.textarea = el; }}
+          rows='25'
+          onInput={this.updateText}
+        />
+      </div>
     )
   }
 }

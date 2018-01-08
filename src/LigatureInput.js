@@ -22,12 +22,15 @@ class LigatureInput extends Component {
     const ligatureString = [...ligatures].join(', ');
 
     return (
-      <textarea
-        defaultValue={ligatureString}
-        ref={el => { this.textarea = el; }}
-        rows='5'
-        onInput={this.updateLigatures}
-      />
+      <div className='ligature-input'>
+        <h4>Enter ligatures (comma-separated) here:</h4>
+        <textarea
+          defaultValue={ligatureString}
+          ref={el => { this.textarea = el; }}
+          rows='5'
+          onInput={this.updateLigatures}
+        />
+      </div>
     )
   }
 }
