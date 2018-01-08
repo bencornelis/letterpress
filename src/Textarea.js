@@ -4,14 +4,14 @@ class Textarea extends Component {
   constructor(props) {
     super(props);
 
-    this.handleOnInput = this.handleOnInput.bind(this);
+    this.onInput = this.onInput.bind(this);
   }
 
   componentDidMount() {
-    this.handleOnInput();
+    this.onInput();
   }
 
-  handleOnInput() {
+  onInput() {
     const { handleInput } = this.props;
     const newInput = this.textarea.value;
     handleInput(newInput);
@@ -25,7 +25,7 @@ class Textarea extends Component {
         defaultValue={defaultValue}
         ref={el => { this.textarea = el; }}
         rows={rows}
-        onInput={this.handleOnInput}
+        onInput={this.onInput}
       />
     );
   }

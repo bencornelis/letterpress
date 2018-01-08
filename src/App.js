@@ -15,11 +15,11 @@ class App extends Component {
       charCount: 0,
     }
 
-    this.setText = this.setText.bind(this);
-    this.setLigatures = this.setLigatures.bind(this);
+    this.updateText = this.updateText.bind(this);
+    this.updateLigatures = this.updateLigatures.bind(this);
   }
 
-  setText(text) {
+  updateText(text) {
     this.setState(prevState => {
       const charCount = helpers.computeCharCount(text, prevState.ligatures);
       return {
@@ -29,7 +29,7 @@ class App extends Component {
     });
   }
 
-  setLigatures(ligaturesString) {
+  updateLigatures(ligaturesString) {
     const isNonEmpty = lig => !R.isEmpty(lig)
     const ligatureArray = R.filter(isNonEmpty)(ligaturesString.split(/\s*,\s*/));
     const ligatures = new Set(ligatureArray);
@@ -49,9 +49,9 @@ class App extends Component {
     return (
       <div>
         <div className='left-column'>
-          <TextInput handleInput={this.setText} />
+          <TextInput handleInput={this.updateText} />
           character count: {charCount}
-          <LigatureInput handleInput={this.setLigatures} />
+          <LigatureInput handleInput={this.updateLigatures} />
         </div>
         <div className='right-column'>
           <Statistics
