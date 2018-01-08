@@ -10,14 +10,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      text: 'This is some test letterpress text.',
-      ligatures: new Set([
-        'ff',
-        'fi',
-        'fl',
-        'ffl',
-        'ffi',
-      ]),
+      text: '',
+      ligatures: new Set(),
       charCount: 0,
     }
 
@@ -51,22 +45,19 @@ class App extends Component {
 
   render() {
     const { text, ligatures, charCount } = this.state;
+
     return (
       <div>
         <div className='left-column'>
-          <TextInput
-            text={text}
-            setText={this.setText} />
+          <TextInput handleInput={this.setText} />
           character count: {charCount}
-
-          <LigatureInput
-            ligatures={ligatures}
-            setLigatures={this.setLigatures} />
+          <LigatureInput handleInput={this.setLigatures} />
         </div>
         <div className='right-column'>
           <Statistics
             text={text}
-            ligatures={ligatures} />
+            ligatures={ligatures}
+          />
         </div>
       </div>
     );

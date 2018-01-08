@@ -1,38 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Textarea from './Textarea';
 
-class LigatureInput extends Component {
-  constructor(props) {
-    super(props);
+const DEFAULT_VALUE = 'ff, fi, fl, ffl, ffi';
 
-    this.updateLigatures = this.updateLigatures.bind(this);
-  }
+function LigatureInput(props) {
+  const { handleInput } = props;
 
-  componentDidMount() {
-    this.updateLigatures();
-  }
-
-  updateLigatures() {
-    const { setLigatures } = this.props;
-    const newLigaturesString = this.textarea.value;
-    setLigatures(newLigaturesString);
-  }
-
-  render() {
-    const { ligatures } = this.props;
-    const ligatureString = [...ligatures].join(', ');
-
-    return (
-      <div className='ligature-input'>
-        <h4>Enter ligatures (comma-separated) here:</h4>
-        <textarea
-          defaultValue={ligatureString}
-          ref={el => { this.textarea = el; }}
-          rows='5'
-          onInput={this.updateLigatures}
-        />
-      </div>
-    )
-  }
+  return (
+    <div className='ligature-input'>
+      <h4>Enter text here:</h4>
+      <Textarea
+        defaultValue={DEFAULT_VALUE}
+        rows='5'
+        handleInput={handleInput}
+      />
+    </div>
+  );
 }
 
 export default LigatureInput;
