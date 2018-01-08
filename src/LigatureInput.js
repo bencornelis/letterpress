@@ -8,7 +8,7 @@ function LigatureInput(props) {
 
   return (
     <div className='ligature-input'>
-      <h4>Enter text here:</h4>
+      <h4>Enter ligatures (comma-separated) here:</h4>
       <Textarea
         defaultValue={DEFAULT_VALUE}
         rows='5'
